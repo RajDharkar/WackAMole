@@ -5,4 +5,4 @@ Wack-A-Mole! Custom website that hosts WackaMole, with an algorithm based to mak
 
 Editing dom elements, add click handlers to whack the mole, and algorithmically spawn the mole and piranha plant.
 
-![whac-a-mole-sample](https://user-images.githubusercontent.com/78777681/221445356-31d1e159-9e71-43cb-8d38-a6988b81051d.png)
+![WackAMole](https://github.com/user-attachments/assets/50eef024-26ad-4aba-9b86-a88231af9cc6)
