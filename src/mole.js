@@ -66,12 +66,34 @@ function selectTile() {
     if (gameOver) {
         return;
     }
+    
+    // Handle scoring and game over logic
     if (this == currMoleTile) {
         score += 10;
-        document.getElementById("score").innerText = score.toString(); //update score html
-    }
+        document.getElementById("score").innerText = score.toString(); // Update score html
+    } 
     else if (this == currPlantTile) {
-        document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //update score html
+        document.getElementById("score").innerText = "GAME OVER: " + score.toString(); // Update score html
         gameOver = true;
+        return; // Stop further processing after game over
+    }
+
+    // Swapping positions of mole and plant if both exist
+    if (currMoleTile && currPlantTile) {
+        let moleImage = currMoleTile.firstChild;
+        let plantImage = currPlantTile.firstChild;
+
+        // Clear existing images
+        currMoleTile.innerHTML = "";
+        currPlantTile.innerHTML = "";
+
+        // Swap images
+        currMoleTile.appendChild(plantImage);
+        currPlantTile.appendChild(moleImage);
+
+        // Update references to swapped tiles
+        let temp = currMoleTile;
+        currMoleTile = currPlantTile;
+        currPlantTile = temp;
     }
 }
